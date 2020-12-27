@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   }
 
   #searchForm {
-    margin-right: 50px;
+    margin-right: 100px;
   }
 
   .menu-btn {
@@ -21,6 +21,12 @@ import { Component } from '@angular/core';
   .menu-btn:hover,
   .menu-btn:focus {
     background: #2b3e50;
+  }
+
+  @media screen and (max-width: 1199px) and (min-width: 992px) {
+    #searchForm {
+      margin-right: 0;
+    }
   }
 
   @media screen and (max-width: 991px) and (min-width: 768px) {
