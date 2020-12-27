@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   template: `
   <nav-bar></nav-bar>
   <events-list></events-list>
+  <inter></inter>
   `
 })
 export class EventsAppComponent {
