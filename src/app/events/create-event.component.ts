@@ -33,12 +33,28 @@ import { EventService } from './shared';
   `]
 })
 export class CreateEventComponent {
-  newEvent;
+  event: any;
 
   isDirty: boolean = true;
 
   constructor(private router: Router, private eventService: EventService) {
 
+  }
+
+  ngOnInit() {
+    this.event = {
+      name: 'Ng Spectacular',
+      date: new Date('8/8/2028'),
+      time: '10:00 am',
+      price: 799.99,
+      location: {
+        address: '100 kings road',
+        city: 'Lagos',
+        country: 'Nigeria'
+      },
+      onlineUrl: 'https://ngSpectacular.com',
+      imageUrl: 'http://localhost:4200/assets/images/angularconnect-shield.png'
+    }
   }
 
   cancel() {
