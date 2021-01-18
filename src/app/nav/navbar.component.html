@@ -37,7 +37,7 @@
         <div class="form-group">
           <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Search Sessions" >
         </div>
-        <button class="btn btn-default search-btn" modal-trigger>
+        <button class="btn btn-default search-btn" modal-trigger="searchResults">
           Search
         </button>
       </form>
@@ -45,10 +45,22 @@
   </div>
 </div>
 
-<simple-modal title="Matching Sessions">
+<simple-modal elementId="searchResults" title="Matching Sessions">
   <div class="list-group">
     <a class="list-group-item" *ngFor="let session of foundSessions" [routerLink]="['/events', session.eventId]">
       {{session.name}}
     </a>
   </div>
 </simple-modal>
+
+<!--
+  Note:
+  By using elementId, you can have another modal
+  with a different id e.g userList as shown below.
+  This way, you avoid many modals having same id.
+
+<simple-modal elementId="userList" title="Whatever...">
+   //Your code here
+</simple-modal>
+-->
+
