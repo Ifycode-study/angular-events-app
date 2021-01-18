@@ -1,6 +1,6 @@
-# Angular Fundamentals
+# Angular Events App v.11.0.5
 
-Angular fundamentals pluralsight course generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+Events app from [Angular fundamentals pluralsight course](https://github.com/Ifycode/angular-events-app-v.7.1.2) rebuilt with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
 <!--
 ## Development server
