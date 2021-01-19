@@ -1,11 +1,12 @@
 .votingWidgetContainer {
-  padding-left:24px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .votingWidget {
   height: 64px;
   padding-top: 7px;
-  border-radius: 21px;
+  border-radius: 10px;
 }
 
 .votingButton {
