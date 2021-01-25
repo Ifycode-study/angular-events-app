@@ -5,6 +5,7 @@ import { AuthService } from "src/app/user/auth.service";
 import { VoterService } from "./voter.service";
 import { DurationPipe } from "../shared";
 import { CollapsibleWellComponent } from "src/app/common";
+import { UpvoteComponent } from "./upvote.component";
 //import Issession & By later when you need them
 
 describe('SessionListComponent', () => {
@@ -14,15 +15,21 @@ describe('SessionListComponent', () => {
       debugEl: DebugElement;
 
   beforeEach(async(() => {
-    let mockAuthService = {};
-    let mockVoterService = {};
+    let mockAuthService = {
+      isAuthenticated: () => true,
+      currentUser: {userName: 'joe'}
+    };
+    let mockVoterService = {
+      userHasVoted: () => true
+    };
 
     TestBed.configureTestingModule({
       imports: [],
       declarations: [
         SessionListComponent,
         DurationPipe,
-        CollapsibleWellComponent
+        CollapsibleWellComponent,
+        UpvoteComponent
       ],
       providers: [
         { provide: AuthService, useValue: mockAuthService },
