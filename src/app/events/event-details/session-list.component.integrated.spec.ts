@@ -6,7 +6,7 @@ import { VoterService } from "./voter.service";
 import { DurationPipe } from "../shared";
 import { CollapsibleWellComponent } from "src/app/common";
 import { UpvoteComponent } from "./upvote.component";
-//import Issession & By later when you need them
+import { By } from "@angular/platform-browser";
 
 describe('SessionListComponent', () => {
   let fixture: ComponentFixture<SessionListComponent>,
@@ -67,7 +67,17 @@ describe('SessionListComponent', () => {
 
       fixture.detectChanges();
 
-      expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+      //expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+
+      /*---------------------------------------------------
+      You can choose to use the DebugElement method instead
+      of element.querySelector('[well-title]').textContent
+      ----------------------------------------------------*/
+      //for directives we use By.directive, for css we use By.css
+
+      expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1');
+
+
     });
   });
 });
